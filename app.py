@@ -145,7 +145,7 @@ def detect_anomalies(df, column='sessions'):
     df['is_anomaly'] = (df[column] < lower_bound) | (df[column] > upper_bound)
     anomalies = df[df['is_anomaly']]
 
-    return anomalies, lower_bound, upper_bound
+    return df, anomalies, lower_bound, upper_bound
 
 
 # Sidebar
@@ -386,8 +386,7 @@ else:
         st.header("⚠️ Anomaly Detection")
         st.markdown("**Identify unusual spikes or drops in traffic**")
 
-        df_anomaly = df.copy()
-        anomalies, lower, upper = detect_anomalies(df_anomaly)
+        df_anomaly, anomalies, lower, upper = detect_anomalies(df.copy())
 
         # Anomaly metrics
         col1, col2, col3 = st.columns(3)
