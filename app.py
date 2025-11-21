@@ -112,13 +112,13 @@ def detect_trends(df):
 
     slope = coeffs[0]
     if slope > 5:
-        direction = "📈 Upward"
+        direction = "Upward"
         color = "green"
     elif slope < -5:
-        direction = "📉 Downward"
+        direction = "Downward"
         color = "red"
     else:
-        direction = "➡️ Stable"
+        direction = "Stable"
         color = "gray"
 
     growth_rate = ((y[-1] - y[0]) / y[0]) * 100 if y[0] != 0 else 0
@@ -385,7 +385,8 @@ else:
         st.header("⚠️ Anomaly Detection")
         st.markdown("**Identify unusual spikes or drops in traffic**")
 
-        anomalies, lower, upper = detect_anomalies(df.copy())
+        df_anomaly = df.copy()
+        anomalies, lower, upper = detect_anomalies(df_anomaly)
 
         # Anomaly metrics
         col1, col2, col3 = st.columns(3)
@@ -403,7 +404,7 @@ else:
         fig = go.Figure()
 
         # Normal data
-        normal_data = df[~df['is_anomaly']]
+        normal_data = df_anomaly[~df_anomaly['is_anomaly']]
         fig.add_trace(go.Scatter(
             x=normal_data['date'],
             y=normal_data['sessions'],

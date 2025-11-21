@@ -1,0 +1,273 @@
+2025-11-21 00:31:26.610 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.611 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.800 
+  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run test_app.py [ARGUMENTS]
+2025-11-21 00:31:26.800 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.800 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.800 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.800 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.800 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Session state does not function when running a script without `streamlit run`
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.801 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.802 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 00:31:26.803 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+
+======================================================================
+GA EXTRACTOR PRO - COMPREHENSIVE TEST SUITE
+Simulating User Workflow and Testing All Functionality
+======================================================================
+Started at: 2025-11-21 00:31:26
+
+======================================================================
+TEST 1: DATA GENERATION
+======================================================================
+[PASS] 1.1 Standard 90-day data generation
+       Generated 90 rows
+[PASS] 1.2 Generate 30-day data
+       Successfully generated 30 rows
+[PASS] 1.2 Generate 60-day data
+       Successfully generated 60 rows
+[PASS] 1.2 Generate 180-day data
+       Successfully generated 180 rows
+[PASS] 1.2 Generate 365-day data
+       Successfully generated 365 rows
+[PASS] 1.3 Edge case: 1-day data
+       Successfully generated single row
+[WARNING] 1.4 Edge case: 0-day data
+          Generated empty dataframe - should handle gracefully
+[PASS] 1.5 Data quality: sessions
+       No negative values in sessions
+[PASS] 1.5 Data quality: totalUsers
+       No negative values in totalUsers
+[PASS] 1.5 Data quality: newUsers
+       No negative values in newUsers
+[PASS] 1.5 Data quality: screenPageViews
+       No negative values in screenPageViews
+[PASS] 1.5 Data quality: conversions
+       No negative values in conversions
+[PASS] 1.5 Data quality: revenue
+       No negative values in revenue
+[PASS] 1.5 Data quality: NaN check
+       No NaN values found
+[PASS] 1.5 Data quality: date dtype
+       Date column is correct datetime type
+[PASS] 1.6 Bounce rate range
+       Bounce rate values are within [0,1]
+[PASS] 1.6 Users vs Sessions
+       Users <= Sessions (realistic)
+[PASS] 1.6 New users constraint
+       New users <= Total users
+
+======================================================================
+TEST 2: CLUSTERING ANALYSIS
+======================================================================
+[PASS] 2.1 Standard 3-cluster analysis
+       Created 3 clusters
+[PASS] 2.2 2-cluster analysis
+       Successfully created 2 clusters
+[PASS] 2.2 4-cluster analysis
+       Successfully created 4 clusters
+[PASS] 2.2 5-cluster analysis
+       Successfully created 5 clusters
+[PASS] 2.3 Edge case: 1 cluster
+       Single cluster created successfully
+[PASS] 2.4 Cluster labels
+       Cluster labels are 0, 1, 2 as expected
+[PASS] 2.5 Cluster stats: sessions
+       sessions present in statistics
+[PASS] 2.5 Cluster stats: totalUsers
+       totalUsers present in statistics
+[PASS] 2.5 Cluster stats: conversions
+       conversions present in statistics
+[PASS] 2.5 Cluster stats: revenue
+       revenue present in statistics
+[PASS] 2.5 Cluster stats: NaN
+       No NaN values in statistics
+[PASS] 2.6 Small dataset (5 rows)
+       Clustering works with small dataset
+[PASS] 2.7 Cluster naming
+       Found 3 distinct cluster names
+
+======================================================================
+TEST 3: TREND DETECTION
+======================================================================
+[PASS] 3.1 Trend result: direction
+       direction present in results
+[PASS] 3.1 Trend result: color
+       color present in results
+[PASS] 3.1 Trend result: slope
+       slope present in results
+[PASS] 3.1 Trend result: growth_rate
+       growth_rate present in results
+[PASS] 3.1 Trend result: trend_line
+       trend_line present in results
+[PASS] 3.2 Upward trend
+       Correctly detected upward trend (slope: 11.18)
+[PASS] 3.3 Downward trend
+       Correctly detected downward trend (slope: -11.24)
+[PASS] 3.4 Stable trend
+       Correctly detected stable trend (slope: 0.09)
+[PASS] 3.5 Growth rate type
+       Growth rate is numeric: 7.06%
+[PASS] 3.6 Trend line length
+       Trend line matches data length (90 points)
+[PASS] 3.7 Zero division protection
+       Handled zero initial value without error
+
+======================================================================
+TEST 4: ANOMALY DETECTION
+======================================================================
+[ERROR] 4.1 Standard anomaly detection
+        Missing is_anomaly column
+        Traceback: Traceback (most recent call last):
+  File "C:\Users\emman\p_Claude\big_data\w5\test_app.py", line 390, in test_anomalies
+    assert 'is_anomaly' in df.columns, "Missing is_anomaly column"
+           ^...
+[PASS] 4.2 Threshold calculations
+       Lower=735.25, Upper=1463.25
+[PASS] 4.3 Detect spike anomaly
+       Detected 1 anomalies including spike
+[PASS] 4.4 Detect drop anomaly
+       Detected 1 anomalies including drop
+[PASS] 4.5 Uniform data (no anomalies)
+       Correctly found no anomalies in uniform data
+[PASS] 4.6 Anomaly on sessions
+       Successfully detected anomalies in sessions
+[PASS] 4.6 Anomaly on totalUsers
+       Successfully detected anomalies in totalUsers
+[PASS] 4.6 Anomaly on conversions
+       Successfully detected anomalies in conversions
+[PASS] 4.7 Small dataset (5 rows)
+       Anomaly detection works on small dataset
+
+======================================================================
+TEST 5: INTEGRATION & EDGE CASES
+======================================================================
+[PASS] 5.1 Full pipeline
+       All functions executed successfully in sequence
+[PASS] 5.2 Large dataset (730 days)
+       Successfully processed 2 years of data
+[PASS] 5.3 Data persistence
+       Original data preserved after operations
+[PASS] 5.4 Missing columns
+       Correctly raised error for missing columns
+[PASS] 5.5 Data type consistency
+       All numeric columns have correct types
+[PASS] 5.6 Memory efficiency
+       Dataset size: 0.03 MB (efficient)
+
+======================================================================
+TEST SUMMARY
+======================================================================
+Total Tests: 56
+Passed: 55 (98.2%)
+Failed: 1 (1.8%)
+Warnings: 1
+======================================================================
+
+======================================================================
+Saving detailed results...
+Traceback (most recent call last):
+  File "C:\Users\emman\p_Claude\big_data\w5\test_app.py", line 655, in <module>
+    print("\u2705 Results saved to test_results.txt")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>

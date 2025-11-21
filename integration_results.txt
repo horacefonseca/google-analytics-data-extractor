@@ -1,0 +1,182 @@
+2025-11-21 01:04:26.693 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.694 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.886 
+  [33m[1mWarning:[0m to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run manual_integration_test.py [ARGUMENTS]
+2025-11-21 01:04:26.886 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.887 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Session state does not function when running a script without `streamlit run`
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.888 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.889 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.890 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2025-11-21 01:04:26.891 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+======================================================================
+MANUAL INTEGRATION TEST - SIMULATING USER WORKFLOW
+======================================================================
+
+STEP 1: User clicks 'Connect to Demo'
+----------------------------------------------------------------------
+[SUCCESS] Generated 90 days of demo data
+          Columns: ['date', 'sessions', 'totalUsers', 'newUsers', 'screenPageViews', 'bounceRate', 'averageSessionDuration', 'conversions', 'revenue']
+          Date range: 2025-08-24 01:04:26.891843 to 2025-11-21 01:04:26.891843
+
+STEP 2: User views Overview tab
+----------------------------------------------------------------------
+[SUCCESS] Overview metrics calculated:
+          Total Sessions: 98,620
+          Total Users: 69,002
+          Total Conversions: 3,015
+          Total Revenue: $392,258.83
+[SUCCESS] CSV export prepared (9523 bytes)
+
+STEP 3: User goes to Clustering tab, selects 3 clusters, clicks 'Run Clustering'
+----------------------------------------------------------------------
+[SUCCESS] Clustering completed
+          Clusters created: 3
+          Cluster names: ['Medium Activity', 'High Activity', 'Low Activity']
+
+          Cluster Statistics:
+                      sessions  totalUsers  conversions      revenue
+cluster                                                   
+0         976.228571  685.857143    35.171429  4656.527695
+1        1144.735294  792.911765    22.911765  2607.127306
+2        1215.761905  858.952381    47.857143  6697.049077
+[SUCCESS] Cluster columns verified
+
+STEP 4: User views Trends tab
+----------------------------------------------------------------------
+[SUCCESS] Trend detection completed
+          Direction: Stable
+          Growth Rate: 7.33%
+          Daily Change: 2.20 sessions/day
+          Trend line points: 90
+[SUCCESS] All trend fields present
+
+STEP 5: User views Anomalies tab
+----------------------------------------------------------------------
+[SUCCESS] Anomaly detection completed
+          Anomalies detected: 0
+          Lower threshold: 733.38
+          Upper threshold: 1446.38
+[SUCCESS] 'is_anomaly' column exists in dataframe
+          Normal data points: 90
+          Anomaly data points: 0
+[SUCCESS] Anomaly visualization data prepared without errors
+
+STEP 6: User tries different cluster counts (2, 4, 5)
+----------------------------------------------------------------------
+[SUCCESS] 2-cluster analysis: Created 2 clusters
+[SUCCESS] 4-cluster analysis: Created 4 clusters
+[SUCCESS] 5-cluster analysis: Created 5 clusters
+
+STEP 7: Testing edge cases
+----------------------------------------------------------------------
+[SUCCESS] Small dataset (7 days) processed successfully
+[SUCCESS] Large dataset (365 days) processed successfully
+
+======================================================================
+INTEGRATION TEST SUMMARY
+======================================================================
+
+Total Errors: 0
+Total Warnings: 0
+
+[SUCCESS] ALL TESTS PASSED - Application is working correctly!
+          User can successfully navigate all tabs and perform all operations.

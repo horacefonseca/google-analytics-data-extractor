@@ -1,0 +1,89 @@
+GA EXTRACTOR PRO - TEST RESULTS
+Generated: 2025-11-21 00:31:28
+======================================================================
+
+SUMMARY:
+Total Tests: 56
+Passed: 55
+Failed: 1
+Warnings: 1
+
+======================================================================
+ERRORS:
+======================================================================
+
+1. 4.1 Standard anomaly detection
+   Error: Missing is_anomaly column
+   Traceback:
+Traceback (most recent call last):
+  File "C:\Users\emman\p_Claude\big_data\w5\test_app.py", line 390, in test_anomalies
+    assert 'is_anomaly' in df.columns, "Missing is_anomaly column"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing is_anomaly column
+
+
+======================================================================
+WARNINGS:
+======================================================================
+
+1. 1.4 Edge case: 0-day data
+   Warning: Generated empty dataframe - should handle gracefully
+
+======================================================================
+PASSED TESTS:
+======================================================================
+1. 1.1 Standard 90-day data generation: Generated 90 rows
+2. 1.2 Generate 30-day data: Successfully generated 30 rows
+3. 1.2 Generate 60-day data: Successfully generated 60 rows
+4. 1.2 Generate 180-day data: Successfully generated 180 rows
+5. 1.2 Generate 365-day data: Successfully generated 365 rows
+6. 1.3 Edge case: 1-day data: Successfully generated single row
+7. 1.5 Data quality: sessions: No negative values in sessions
+8. 1.5 Data quality: totalUsers: No negative values in totalUsers
+9. 1.5 Data quality: newUsers: No negative values in newUsers
+10. 1.5 Data quality: screenPageViews: No negative values in screenPageViews
+11. 1.5 Data quality: conversions: No negative values in conversions
+12. 1.5 Data quality: revenue: No negative values in revenue
+13. 1.5 Data quality: NaN check: No NaN values found
+14. 1.5 Data quality: date dtype: Date column is correct datetime type
+15. 1.6 Bounce rate range: Bounce rate values are within [0,1]
+16. 1.6 Users vs Sessions: Users <= Sessions (realistic)
+17. 1.6 New users constraint: New users <= Total users
+18. 2.1 Standard 3-cluster analysis: Created 3 clusters
+19. 2.2 2-cluster analysis: Successfully created 2 clusters
+20. 2.2 4-cluster analysis: Successfully created 4 clusters
+21. 2.2 5-cluster analysis: Successfully created 5 clusters
+22. 2.3 Edge case: 1 cluster: Single cluster created successfully
+23. 2.4 Cluster labels: Cluster labels are 0, 1, 2 as expected
+24. 2.5 Cluster stats: sessions: sessions present in statistics
+25. 2.5 Cluster stats: totalUsers: totalUsers present in statistics
+26. 2.5 Cluster stats: conversions: conversions present in statistics
+27. 2.5 Cluster stats: revenue: revenue present in statistics
+28. 2.5 Cluster stats: NaN: No NaN values in statistics
+29. 2.6 Small dataset (5 rows): Clustering works with small dataset
+30. 2.7 Cluster naming: Found 3 distinct cluster names
+31. 3.1 Trend result: direction: direction present in results
+32. 3.1 Trend result: color: color present in results
+33. 3.1 Trend result: slope: slope present in results
+34. 3.1 Trend result: growth_rate: growth_rate present in results
+35. 3.1 Trend result: trend_line: trend_line present in results
+36. 3.2 Upward trend: Correctly detected upward trend (slope: 11.18)
+37. 3.3 Downward trend: Correctly detected downward trend (slope: -11.24)
+38. 3.4 Stable trend: Correctly detected stable trend (slope: 0.09)
+39. 3.5 Growth rate type: Growth rate is numeric: 7.06%
+40. 3.6 Trend line length: Trend line matches data length (90 points)
+41. 3.7 Zero division protection: Handled zero initial value without error
+42. 4.2 Threshold calculations: Lower=735.25, Upper=1463.25
+43. 4.3 Detect spike anomaly: Detected 1 anomalies including spike
+44. 4.4 Detect drop anomaly: Detected 1 anomalies including drop
+45. 4.5 Uniform data (no anomalies): Correctly found no anomalies in uniform data
+46. 4.6 Anomaly on sessions: Successfully detected anomalies in sessions
+47. 4.6 Anomaly on totalUsers: Successfully detected anomalies in totalUsers
+48. 4.6 Anomaly on conversions: Successfully detected anomalies in conversions
+49. 4.7 Small dataset (5 rows): Anomaly detection works on small dataset
+50. 5.1 Full pipeline: All functions executed successfully in sequence
+51. 5.2 Large dataset (730 days): Successfully processed 2 years of data
+52. 5.3 Data persistence: Original data preserved after operations
+53. 5.4 Missing columns: Correctly raised error for missing columns
+54. 5.5 Data type consistency: All numeric columns have correct types
+55. 5.6 Memory efficiency: Dataset size: 0.03 MB (efficient)
