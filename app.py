@@ -9,13 +9,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-import json
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
 
 # Page config
 st.set_page_config(
@@ -38,6 +35,7 @@ if 'demo_mode' not in st.session_state:
     st.session_state.demo_mode = False
 
 
+@st.cache_data
 def generate_demo_data(days=90):
     """Generate realistic demo GA4 data for demonstration"""
     dates = pd.date_range(end=datetime.now(), periods=days, freq='D')
@@ -75,6 +73,7 @@ def generate_demo_data(days=90):
     return df
 
 
+@st.cache_data
 def perform_clustering(df, n_clusters=3):
     """Perform K-means clustering on data"""
     # Select numeric columns
@@ -101,6 +100,7 @@ def perform_clustering(df, n_clusters=3):
     return df, cluster_means
 
 
+@st.cache_data
 def detect_trends(df):
     """Detect trends using linear regression"""
     X = np.arange(len(df)).reshape(-1, 1)
@@ -132,6 +132,7 @@ def detect_trends(df):
     }
 
 
+@st.cache_data
 def detect_anomalies(df, column='sessions'):
     """Detect anomalies using IQR method"""
     Q1 = df[column].quantile(0.25)
