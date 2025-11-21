@@ -1,0 +1,8 @@
+PowerPoint Pitch Deck
+	Problem statement and business value
+	Dataset description and characteristics
+	Data mining techniques employed
+	Application features and functionality
+	Technical architecture overview
+	Demo/results showcase
+	Conclusion and impact

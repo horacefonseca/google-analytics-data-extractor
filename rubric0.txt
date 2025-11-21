@@ -1,0 +1,15 @@
+Build a complete, end-to-end data mining application that accepts a dataset and performs meaningful analysis.
+	Include clear instructions for running the application
+	Accept a dataset as input (CSV, JSON, or other common format)
+	Perform data mining operations (classification, clustering, pattern recognition, prediction, etc.)
+	Provide meaningful output/visualizations
+	Be fully functional and ready to demonstrate
+
+Deliverables
+1. Working Application
+	Complete, functional code
+	All dependencies and requirements documented
+	Ready to run without additional setup
+	All application code and files (zip or the deployed application)
+	README with clear descriptions/instructions
+	Any necessary configuration files or dependencies list
