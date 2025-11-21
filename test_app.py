@@ -385,7 +385,7 @@ def test_anomalies():
     # Test 4.1: Standard anomaly detection
     try:
         df = generate_demo_data(90)
-        anomalies, lower, upper = detect_anomalies(df.copy())
+        df_temp, anomalies, lower, upper = detect_anomalies(df.copy())
 
         assert 'is_anomaly' in df.columns, "Missing is_anomaly column"
         logger.log_pass("4.1 Standard anomaly detection", f"Detected {len(anomalies)} anomalies")
@@ -396,7 +396,7 @@ def test_anomalies():
     # Test 4.2: Threshold calculations
     try:
         df = generate_demo_data(90)
-        anomalies, lower, upper = detect_anomalies(df.copy())
+        df_temp, anomalies, lower, upper = detect_anomalies(df.copy())
 
         Q1 = df['sessions'].quantile(0.25)
         Q3 = df['sessions'].quantile(0.75)
@@ -503,7 +503,7 @@ def test_integration():
         trend_results = detect_trends(df)
 
         # Anomalies
-        anomalies, lower, upper = detect_anomalies(df.copy())
+        df_temp, anomalies, lower, upper = detect_anomalies(df.copy())
 
         logger.log_pass("5.1 Full pipeline", "All functions executed successfully in sequence")
 
@@ -530,7 +530,7 @@ def test_integration():
         # Perform operations
         df_clustered, stats = perform_clustering(df.copy(), n_clusters=3)
         trend_results = detect_trends(df)
-        anomalies, lower, upper = detect_anomalies(df.copy())
+        df_temp, anomalies, lower, upper = detect_anomalies(df.copy())
 
         # Check original data unchanged
         if len(df) == original_len:

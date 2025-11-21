@@ -113,7 +113,7 @@ print("-" * 70)
 try:
     # This is where the bug was - we need to keep reference to modified df
     df_anomaly = df.copy()
-    anomalies, lower, upper = detect_anomalies(df_anomaly)
+    df_anomaly, anomalies, lower, upper = detect_anomalies(df_anomaly)
 
     print(f"[SUCCESS] Anomaly detection completed")
     print(f"          Anomalies detected: {len(anomalies)}")
