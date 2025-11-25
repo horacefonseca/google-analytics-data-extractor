@@ -14,6 +14,18 @@ import plotly.graph_objects as go
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
+# Import e-commerce analytics module
+try:
+    from ecommerce_analytics import (
+        EcommerceDataGenerator,
+        EcommerceDataCleaner,
+        EcommerceAnalytics,
+        EcommerceVisualizer
+    )
+    ECOMMERCE_AVAILABLE = True
+except ImportError:
+    ECOMMERCE_AVAILABLE = False
+
 # Page config
 st.set_page_config(
     page_title="GA Extractor Pro",
@@ -33,6 +45,10 @@ if 'data' not in st.session_state:
     st.session_state.data = None
 if 'demo_mode' not in st.session_state:
     st.session_state.demo_mode = False
+if 'dataset_type' not in st.session_state:
+    st.session_state.dataset_type = 'Google Analytics'
+if 'ecommerce_data' not in st.session_state:
+    st.session_state.ecommerce_data = None
 
 
 @st.cache_data
@@ -152,13 +168,55 @@ def detect_anomalies(df, column='sessions'):
 with st.sidebar:
     st.header("🔌 Connection")
 
+    # Dataset type selector
+    dataset_options = ['Google Analytics']
+    if ECOMMERCE_AVAILABLE:
+        dataset_options.append('E-Commerce')
+
+    dataset_type = st.selectbox(
+        "📊 Select Dataset Type",
+        dataset_options,
+        index=dataset_options.index(st.session_state.dataset_type) if st.session_state.dataset_type in dataset_options else 0
+    )
+
+    if dataset_type != st.session_state.dataset_type:
+        st.session_state.dataset_type = dataset_type
+        st.session_state.connected = False
+        st.session_state.data = None
+        st.rerun()
+
+    st.divider()
+
     # Demo mode toggle
     use_demo = st.checkbox("🎭 Use Demo Data (for testing)", value=True)
 
     if use_demo:
         if st.button("Connect to Demo", type="primary"):
             with st.spinner("Generating demo data..."):
-                st.session_state.data = generate_demo_data(90)
+                if st.session_state.dataset_type == 'E-Commerce' and ECOMMERCE_AVAILABLE:
+                    # Generate e-commerce data
+                    generator = EcommerceDataGenerator(seed=42)
+                    sessions_df, events_df, transactions_df = generator.generate_dataset(
+                        visits_per_month=25000,
+                        months=2
+                    )
+                    cleaner = EcommerceDataCleaner()
+                    sessions_clean = cleaner.clean_sessions(sessions_df)
+                    transactions_clean = cleaner.clean_transactions(transactions_df)
+                    customer_df = cleaner.create_customer_summary(sessions_clean, transactions_clean)
+
+                    st.session_state.ecommerce_data = {
+                        'sessions': sessions_clean,
+                        'events': events_df,
+                        'transactions': transactions_clean,
+                        'customers': customer_df
+                    }
+                    st.session_state.data = sessions_clean  # For compatibility
+                else:
+                    # Generate Google Analytics data
+                    st.session_state.data = generate_demo_data(90)
+                    st.session_state.ecommerce_data = None
+
                 st.session_state.connected = True
                 st.session_state.demo_mode = True
             st.success("✅ Connected to demo data!")
@@ -223,102 +281,334 @@ if not st.session_state.connected:
         st.markdown(f"**{feature}**: {description}")
 
 else:
-    # Data loaded - show analysis
-    df = st.session_state.data
+    # Data loaded - show analysis based on dataset type
+    if st.session_state.dataset_type == 'E-Commerce' and st.session_state.ecommerce_data:
+        # E-COMMERCE ANALYTICS VIEW
+        st.markdown("## 🛒 E-Commerce Analytics Dashboard")
+        st.markdown("**Comprehensive business intelligence for online retail**")
 
-    # Tabs
-    tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "🔍 Clustering", "📈 Trends", "⚠️ Anomalies"])
+        ecom_data = st.session_state.ecommerce_data
+        sessions_df = ecom_data['sessions']
+        transactions_df = ecom_data['transactions']
+        customer_df = ecom_data['customers']
 
-    # Tab 1: Overview
-    with tab1:
-        st.header("📊 Data Overview")
+        # Run analytics
+        analytics = EcommerceAnalytics()
+        visualizer = EcommerceVisualizer()
 
-        # Metrics
-        col1, col2, col3, col4 = st.columns(4)
+        # Overview metrics
+        col1, col2, col3, col4, col5 = st.columns(5)
 
         with col1:
-            st.metric("Total Sessions", f"{df['sessions'].sum():,}")
+            st.metric("Total Sessions", f"{len(sessions_df):,}")
         with col2:
-            st.metric("Total Users", f"{df['totalUsers'].sum():,}")
+            total_revenue = transactions_df['total_amount'].sum()
+            st.metric("Total Revenue", f"${total_revenue:,.2f}")
         with col3:
-            st.metric("Total Conversions", f"{df['conversions'].sum():,}")
+            conversion_rate = (sessions_df['converted'].sum() / len(sessions_df)) * 100
+            st.metric("Conversion Rate", f"{conversion_rate:.2f}%")
         with col4:
-            st.metric("Total Revenue", f"${df['revenue'].sum():,.2f}")
+            if len(transactions_df) > 0:
+                avg_order_value = transactions_df.groupby('transaction_id')['order_total'].first().mean()
+                st.metric("Avg Order Value", f"${avg_order_value:.2f}")
+            else:
+                st.metric("Avg Order Value", "$0.00")
+        with col5:
+            total_customers = customer_df[customer_df['total_orders'] > 0].shape[0]
+            st.metric("Customers", f"{total_customers:,}")
 
         st.divider()
 
-        # Main chart
-        st.subheader("📈 Sessions Over Time")
+        # Tabs for e-commerce analytics
+        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+            "💰 Customer Lifetime Value",
+            "🎯 RFM Analysis",
+            "🛒 Cart Abandonment",
+            "📦 Product Performance",
+            "👥 Customer Segmentation",
+            "📊 Raw Data"
+        ])
 
-        fig = px.line(df, x='date', y='sessions', title='Daily Sessions')
-        fig.update_layout(hovermode='x unified')
-        st.plotly_chart(fig, use_container_width=True)
+        # Tab 1: CLV
+        with tab1:
+            st.header("💰 Customer Lifetime Value Analysis")
 
-        # Data table
-        st.subheader("📋 Raw Data")
-        st.dataframe(df, use_container_width=True)
+            customer_clv = analytics.calculate_clv(customer_df)
 
-        # Download
-        csv = df.to_csv(index=False).encode('utf-8')
-        st.download_button(
-            label="💾 Download CSV",
-            data=csv,
-            file_name=f"ga_data_{datetime.now().strftime('%Y%m%d')}.csv",
-            mime="text/csv"
-        )
+            col1, col2, col3, col4 = st.columns(4)
 
-    # Tab 2: Clustering
-    with tab2:
-        st.header("🔍 Clustering Analysis")
-        st.markdown("**Automatically group days with similar traffic patterns**")
+            with col1:
+                avg_clv = customer_clv['total_clv'].mean()
+                st.metric("Average CLV", f"${avg_clv:.2f}")
+            with col2:
+                median_clv = customer_clv['total_clv'].median()
+                st.metric("Median CLV", f"${median_clv:.2f}")
+            with col3:
+                top_10_pct_clv = customer_clv.nlargest(int(len(customer_clv) * 0.1), 'total_clv')['total_clv'].sum()
+                total_clv = customer_clv['total_clv'].sum()
+                top_pct = (top_10_pct_clv / total_clv * 100) if total_clv > 0 else 0
+                st.metric("Top 10% CLV Share", f"{top_pct:.1f}%")
+            with col4:
+                vip_count = (customer_clv['clv_segment'] == 'VIP').sum()
+                st.metric("VIP Customers", f"{vip_count:,}")
 
-        n_clusters = st.slider("Number of Clusters", 2, 5, 3)
+            fig_clv = visualizer.plot_clv_distribution(customer_clv)
+            st.plotly_chart(fig_clv, use_container_width=True)
 
-        if st.button("🎯 Run Clustering", type="primary"):
-            with st.spinner("Clustering data..."):
-                df_clustered, cluster_stats = perform_clustering(df.copy(), n_clusters)
-                st.session_state.data_clustered = df_clustered
-                st.session_state.cluster_stats = cluster_stats
+            st.subheader("Top 20 Customers by CLV")
+            top_customers = customer_clv.nlargest(20, 'total_clv')[
+                ['customer_id', 'total_clv', 'historical_clv', 'predicted_clv',
+                 'total_orders', 'avg_order_value', 'clv_segment']
+            ].round(2)
+            st.dataframe(top_customers, use_container_width=True, hide_index=True)
 
-        if 'data_clustered' in st.session_state:
-            df_c = st.session_state.data_clustered
-            stats = st.session_state.cluster_stats
+        # Tab 2: RFM
+        with tab2:
+            st.header("🎯 RFM Analysis")
 
-            st.success("✅ Clustering complete!")
+            customer_rfm = analytics.rfm_analysis(customer_df)
 
-            # Cluster statistics
-            st.subheader("📊 Cluster Statistics")
-            st.dataframe(stats.round(2), use_container_width=True)
+            if len(customer_rfm) > 0:
+                col1, col2, col3, col4 = st.columns(4)
 
-            # Visualization
-            st.subheader("📈 Clusters Visualization")
+                with col1:
+                    champions = (customer_rfm['rfm_segment'] == 'Champions').sum()
+                    st.metric("Champions", f"{champions:,}")
+                with col2:
+                    loyal = (customer_rfm['rfm_segment'] == 'Loyal Customers').sum()
+                    st.metric("Loyal Customers", f"{loyal:,}")
+                with col3:
+                    at_risk = (customer_rfm['rfm_segment'] == 'At Risk').sum()
+                    st.metric("At Risk", f"{at_risk:,}")
+                with col4:
+                    lost = (customer_rfm['rfm_segment'] == 'Lost').sum()
+                    st.metric("Lost", f"{lost:,}")
 
-            fig = px.scatter(
-                df_c,
-                x='date',
-                y='sessions',
-                color='cluster_name',
-                title='Sessions by Cluster',
-                hover_data=['totalUsers', 'conversions']
-            )
+                fig_rfm = visualizer.plot_rfm_segments(customer_rfm)
+                st.plotly_chart(fig_rfm, use_container_width=True)
+
+                st.subheader("RFM Segment Details")
+                segment_details = customer_rfm.groupby('rfm_segment').agg({
+                    'customer_id': 'count',
+                    'R_score': 'mean',
+                    'F_score': 'mean',
+                    'M_score': 'mean',
+                    'total_revenue': 'sum',
+                    'total_orders': 'mean',
+                    'recency_days': 'mean'
+                }).round(2)
+                segment_details.columns = ['customers', 'avg_R', 'avg_F', 'avg_M', 'total_revenue', 'avg_orders', 'avg_recency']
+                st.dataframe(segment_details.sort_values('total_revenue', ascending=False), use_container_width=True)
+            else:
+                st.warning("No customers with purchases for RFM analysis")
+
+        # Tab 3: Cart Abandonment
+        with tab3:
+            st.header("🛒 Cart Abandonment Analysis")
+
+            abandonment_data = analytics.cart_abandonment_analysis(sessions_df)
+
+            col1, col2, col3, col4 = st.columns(4)
+
+            with col1:
+                st.metric("Total Carts", f"{abandonment_data['total_carts']:,}")
+            with col2:
+                st.metric("Abandoned Carts", f"{abandonment_data['abandoned_carts']:,}")
+            with col3:
+                abandonment_rate = abandonment_data['abandonment_rate'] * 100
+                st.metric("Abandonment Rate", f"{abandonment_rate:.1f}%")
+            with col4:
+                if len(transactions_df) > 0:
+                    avg_order = transactions_df.groupby('transaction_id')['order_total'].first().mean()
+                    lost_revenue = avg_order * abandonment_data['abandoned_carts']
+                    st.metric("Estimated Lost Revenue", f"${lost_revenue:,.2f}")
+
+            fig_abandonment = visualizer.plot_cart_abandonment(abandonment_data)
+            st.plotly_chart(fig_abandonment, use_container_width=True)
+
+        # Tab 4: Product Performance
+        with tab4:
+            st.header("📦 Product Performance")
+
+            product_performance = analytics.product_performance_analysis(transactions_df)
+
+            if len(product_performance) > 0:
+                col1, col2, col3, col4 = st.columns(4)
+
+                with col1:
+                    st.metric("Total Products", f"{len(product_performance)}")
+                with col2:
+                    total_units = product_performance['units_sold'].sum()
+                    st.metric("Units Sold", f"{total_units:,}")
+                with col3:
+                    total_product_revenue = product_performance['revenue'].sum()
+                    st.metric("Total Revenue", f"${total_product_revenue:,.2f}")
+                with col4:
+                    avg_units_per_product = product_performance['units_sold'].mean()
+                    st.metric("Avg Units/Product", f"{avg_units_per_product:.0f}")
+
+                fig_products = visualizer.plot_product_performance(product_performance)
+                st.plotly_chart(fig_products, use_container_width=True)
+
+                st.subheader("Complete Product Performance")
+                product_display = product_performance.copy()
+                product_display['rank'] = range(1, len(product_display) + 1)
+                product_display['revenue_share_pct'] = (product_display['revenue_share'] * 100).round(2)
+                st.dataframe(
+                    product_display[['rank', 'product_name', 'category', 'units_sold', 'revenue',
+                                   'revenue_share_pct', 'num_orders']].round(2),
+                    use_container_width=True,
+                    hide_index=True
+                )
+            else:
+                st.warning("No product sales data available")
+
+        # Tab 5: Customer Segmentation
+        with tab5:
+            st.header("👥 Customer Segmentation (K-Means)")
+
+            customer_segments, segment_analysis = analytics.customer_segmentation(customer_df)
+
+            segment_counts = customer_segments['segment_name'].value_counts()
+
+            cols = st.columns(min(4, len(segment_counts)))
+            for idx, (segment, count) in enumerate(segment_counts.items()):
+                with cols[idx % len(cols)]:
+                    pct = (count / len(customer_segments) * 100)
+                    st.metric(segment, f"{count:,}", f"{pct:.1f}%")
+
+            fig_segments = visualizer.plot_customer_segments(customer_segments)
+            st.plotly_chart(fig_segments, use_container_width=True)
+
+            st.subheader("Segment Characteristics")
+            segment_summary = customer_segments[customer_segments['segment'] >= 0].groupby('segment_name').agg({
+                'customer_id': 'count',
+                'total_revenue': ['mean', 'sum'],
+                'avg_order_value': 'mean',
+                'total_sessions': 'mean',
+                'conversion_rate': 'mean',
+                'recency_days': 'mean'
+            }).round(2)
+            segment_summary.columns = ['customers', 'avg_revenue', 'total_revenue',
+                                       'avg_order_value', 'avg_sessions', 'avg_conversion_rate', 'avg_recency']
+            st.dataframe(segment_summary, use_container_width=True)
+
+        # Tab 6: Raw Data
+        with tab6:
+            st.header("📊 Raw Data")
+
+            data_selector = st.selectbox("Select Dataset", ["Sessions", "Transactions", "Customers"])
+
+            if data_selector == "Sessions":
+                st.dataframe(sessions_df, use_container_width=True)
+                csv = sessions_df.to_csv(index=False).encode('utf-8')
+                st.download_button("Download Sessions CSV", csv, "sessions.csv", "text/csv")
+            elif data_selector == "Transactions":
+                st.dataframe(transactions_df, use_container_width=True)
+                csv = transactions_df.to_csv(index=False).encode('utf-8')
+                st.download_button("Download Transactions CSV", csv, "transactions.csv", "text/csv")
+            else:
+                st.dataframe(customer_df, use_container_width=True)
+                csv = customer_df.to_csv(index=False).encode('utf-8')
+                st.download_button("Download Customers CSV", csv, "customers.csv", "text/csv")
+
+    else:
+        # GOOGLE ANALYTICS VIEW (existing code)
+        df = st.session_state.data
+
+        # Tabs
+        tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "🔍 Clustering", "📈 Trends", "⚠️ Anomalies"])
+
+        # Tab 1: Overview
+        with tab1:
+            st.header("📊 Data Overview")
+
+            # Metrics
+            col1, col2, col3, col4 = st.columns(4)
+
+            with col1:
+                st.metric("Total Sessions", f"{df['sessions'].sum():,}")
+            with col2:
+                st.metric("Total Users", f"{df['totalUsers'].sum():,}")
+            with col3:
+                st.metric("Total Conversions", f"{df['conversions'].sum():,}")
+            with col4:
+                st.metric("Total Revenue", f"${df['revenue'].sum():,.2f}")
+
+            st.divider()
+
+            # Main chart
+            st.subheader("📈 Sessions Over Time")
+
+            fig = px.line(df, x='date', y='sessions', title='Daily Sessions')
+            fig.update_layout(hovermode='x unified')
             st.plotly_chart(fig, use_container_width=True)
 
-            # Insights
-            st.subheader("💡 Insights")
+            # Data table
+            st.subheader("📋 Raw Data")
+            st.dataframe(df, use_container_width=True)
 
-            for cluster_id in sorted(df_c['cluster'].unique()):
-                cluster_data = df_c[df_c['cluster'] == cluster_id]
-                cluster_name = cluster_data['cluster_name'].iloc[0]
-                count = len(cluster_data)
-                avg_sessions = cluster_data['sessions'].mean()
-                avg_conversions = cluster_data['conversions'].mean()
+            # Download
+            csv = df.to_csv(index=False).encode('utf-8')
+            st.download_button(
+                label="💾 Download CSV",
+                data=csv,
+                file_name=f"ga_data_{datetime.now().strftime('%Y%m%d')}.csv",
+                mime="text/csv"
+            )
 
-                st.markdown(f"""
-                **{cluster_name}** ({count} days):
-                - Average sessions: {avg_sessions:.0f}
-                - Average conversions: {avg_conversions:.1f}
-                - Conversion rate: {(avg_conversions/avg_sessions*100):.2f}%
-                """)
+        # Tab 2: Clustering
+        with tab2:
+            st.header("🔍 Clustering Analysis")
+            st.markdown("**Automatically group days with similar traffic patterns**")
+
+            n_clusters = st.slider("Number of Clusters", 2, 5, 3)
+
+            if st.button("🎯 Run Clustering", type="primary"):
+                with st.spinner("Clustering data..."):
+                    df_clustered, cluster_stats = perform_clustering(df.copy(), n_clusters)
+                    st.session_state.data_clustered = df_clustered
+                    st.session_state.cluster_stats = cluster_stats
+
+            if 'data_clustered' in st.session_state:
+                df_c = st.session_state.data_clustered
+                stats = st.session_state.cluster_stats
+
+                st.success("✅ Clustering complete!")
+
+                # Cluster statistics
+                st.subheader("📊 Cluster Statistics")
+                st.dataframe(stats.round(2), use_container_width=True)
+
+                # Visualization
+                st.subheader("📈 Clusters Visualization")
+
+                fig = px.scatter(
+                    df_c,
+                    x='date',
+                    y='sessions',
+                    color='cluster_name',
+                    title='Sessions by Cluster',
+                    hover_data=['totalUsers', 'conversions']
+                )
+                st.plotly_chart(fig, use_container_width=True)
+
+                # Insights
+                st.subheader("💡 Insights")
+
+                for cluster_id in sorted(df_c['cluster'].unique()):
+                    cluster_data = df_c[df_c['cluster'] == cluster_id]
+                    cluster_name = cluster_data['cluster_name'].iloc[0]
+                    count = len(cluster_data)
+                    avg_sessions = cluster_data['sessions'].mean()
+                    avg_conversions = cluster_data['conversions'].mean()
+
+                    st.markdown(f"""
+                    **{cluster_name}** ({count} days):
+                    - Average sessions: {avg_sessions:.0f}
+                    - Average conversions: {avg_conversions:.1f}
+                    - Conversion rate: {(avg_conversions/avg_sessions*100):.2f}%
+                    """)
 
     # Tab 3: Trends
     with tab3:
